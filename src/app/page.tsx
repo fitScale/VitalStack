@@ -25,6 +25,7 @@ import { useRouter } from "next/navigation";
 import va from "@vercel/analytics";
 
 import { useState } from "react";
+import CssLoader from "@/components/CssLoader/CssLoader.component";
 
 const JBCImage: ImageContainerProps = {
   src: "https://res.cloudinary.com/dod9nbjke/image/upload/v1687827725/Purus%20Labs/Logos/Red_Purus_xgruxk.png",
@@ -97,6 +98,18 @@ const logo3: ImageContainerProps = {
   src: "https://res.cloudinary.com/dod9nbjke/image/upload/v1694526682/JBC/Logo/DrLogo_xs43bz.png",
   alt: "",
   aspectRatio: "223/38",
+};
+
+const recycle: ImageContainerProps = {
+  src: "https://res.cloudinary.com/dod9nbjke/image/upload/v1694644670/Purus%20Labs/Product%20Images/Recycle-min_gkf7ur.png",
+  alt: "",
+  aspectRatio: "1/1",
+};
+
+const dpol: ImageContainerProps = {
+  src: "https://res.cloudinary.com/dod9nbjke/image/upload/v1694644670/Purus%20Labs/Product%20Images/D-pol-min_di21co.png",
+  alt: "",
+  aspectRatio: "1/1",
 };
 
 const logo4: ImageContainerProps = {
@@ -192,9 +205,10 @@ const Page = () => {
   const [addCart] = useMutation(addCartItemMutation);
   const [discountCode] = useMutation(applyDiscountMutation);
   const router = useRouter();
+  const [loading, setLoading] = useState(false);
 
   const checkout = async () => {
-    // setLoading(true);
+    setLoading(true);
     SetMoving(false);
     va.track("Checkout");
 
@@ -223,12 +237,24 @@ const Page = () => {
     router.push(finalCart.cart.checkoutUrl!);
   };
 
+  const scrollToElement = (elementId: any) => {
+    const element = document.getElementById(elementId);
+    if (element) {
+      element.scrollIntoView({ behavior: "smooth" });
+    }
+  };
+
   return (
     <>
       <div className={style.header}>
         <ImageContainer imageContainerConfig={JBCImage} />
       </div>
       <main className={style.main}>
+        {loading && (
+          <div className={style.spinner}>
+            <CssLoader />
+          </div>
+        )}
         <div className={style.hero}>
           <p>DISCOVER EXACTLY HOW...</p>
           <h1>
@@ -248,13 +274,13 @@ const Page = () => {
           <div
             className={style.cta}
             onClick={() => {
-              checkout();
+              scrollToElement("test");
             }}
           >
             CLICK TO HERE LEARN “THE SECRET”{" "}
           </div>
         </div>
-        <div className={style.hook}>
+        <div className={style.hook} id="test">
           <p>
             Read Below to Discover Two{" "}
             <span className="highlightCopy">The 'Secret Weapons'</span> for Men
@@ -376,7 +402,7 @@ const Page = () => {
             <div
               className={style.cta}
               onClick={() => {
-                checkout();
+                scrollToElement("offer");
               }}
             >
               YES, TRANSFORM MY FITNESS NOW!
@@ -411,7 +437,7 @@ const Page = () => {
                   className={style.cta}
                   style={{ border: "1px solid white" }}
                   onClick={() => {
-                    checkout();
+                    scrollToElement("offer");
                   }}
                 >
                   <p
@@ -434,7 +460,7 @@ const Page = () => {
             life...
           </p>
         </div>
-        <div className={style.offer}>
+        <div className={style.offer} id="offer">
           <p>SO, HERES'S THE DEAL: 🤝</p>
           <h1>
             FOR A LIMITED TIME, SEIZE A MASSIVE{" "}
@@ -473,25 +499,39 @@ const Page = () => {
           </div>
           <div className={style.box}>
             <h2>Here’s what your getting:</h2>
-            <p>✅ Core EVOLV Program ~ Value: $29.99 / mo.</p>
-            <p className={style.bonus}>BOUNUS #1:</p>
-
-            <p>✅ Private Community Access~ Value: $97.00</p>
-            <p className={style.bonus}>BOUNUS #2:</p>
-            <p className={style.total}>
-              ✅ Direct 1-1 coaching ~ Value: $297.00
+            <p>RECYCLE ( 30 SERV. ) ~ Value: $39.99</p>
+            <p>D-POL ( 30 SERV. ) ~ Value: $39.99</p>
+            <p className={style.bonus} style={{ color: "red" }}>
+              LIMITED TIME BOUNUS:
             </p>
+
+            <p>✅ FREE SHIPPING ~ Value: $8.78</p>
+
             <p style={{ marginTop: "10px", fontSize: "14px" }}>
-              Total Package Value: $423.99
+              Total Package Value: $88.72
             </p>
             <hr />
             <p
               className={style.final}
               style={{ fontSize: "16px", marginTop: "10px" }}
             >
-              TODAY’S SPECIAL PRICE: $0.00
+              TODAY’S SPECIAL PRICE: $59.99
             </p>
-            <div className={style.save}>LIMITED TIME SAVE $423.99!</div>
+            <div className={style.save}>LIMITED TIME SAVE $28.72!</div>
+            <div className={style.grid}>
+              <div>
+                <ImageContainer imageContainerConfig={dpol} />
+                <p>D-POL</p>
+                <p>THE ULTIMATE TEST BOOSTER</p>
+                <div>Tablets</div>
+              </div>
+              <div>
+                <ImageContainer imageContainerConfig={dpol} />
+                <p style={{ fontWeight: "800", fontSize: "14px" }}>RECYCLE</p>
+                <p>THE ULTIMATE TEST OPTIMIZER</p>
+                <div>Tablets</div>
+              </div>
+            </div>
           </div>
           <div
             className={style.cta}
@@ -560,7 +600,7 @@ const Page = () => {
 
           <div className={style.thecoolbox}>
             <p>RECYCLE: THE ADVANCED HORMONE OPTIMIZER...</p>
-            <ImageContainer imageContainerConfig={pack} />
+            <ImageContainer imageContainerConfig={recycle} />
             <div className={style.theContainer}>
               <div>
                 <Svg color="black" icon="MoleculeIcon" />
@@ -629,7 +669,7 @@ const Page = () => {
           </div>
           <div className={style.thecoolbox}>
             <p>D-POL: The ULTIMATE TEST BOOSTER...</p>
-            <ImageContainer imageContainerConfig={pack} />
+            <ImageContainer imageContainerConfig={dpol} />
             <div className={style.theContainer}>
               <div>
                 <Svg color="black" icon="MoleculeIcon" />
