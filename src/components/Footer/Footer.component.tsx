@@ -20,14 +20,11 @@ const Footer = () => {
     <footer className={style.footer}>
       <div className={style.mobileFooter}>
         <div className={style.aboutSection}>
-          <p>About Jason Brown</p>
-          <p>
-            Jason Brown, a combat veteran and founder of Box Programming & Jason
-            Brown Coaching, is the published author of "Lower-body Training" and
-            holds a Masters in Exercise Science; certified through the NSCA and
-            Westside Barbell, he contributes to T-Nation.com and EliteFTS.com,
-            and has been involved in athletics and personal training since high
-            school, specializing in the Conjugate System.
+          <p style={{ color: "white" }}>Disclaimer:</p>
+          <p style={{ color: "white" }}>
+            † These statements have not been evaluated by the Food and Drug
+            Administration. These products are not intended to diagnose, treat,
+            cure or prevent any disease.
           </p>
         </div>
       </div>

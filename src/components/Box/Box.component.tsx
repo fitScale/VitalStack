@@ -23,7 +23,7 @@ const Box = ({ config }: { config: BoxProps }) => {
     <div
       className={style.boxes}
       style={{
-        backgroundColor: config.red ? "#A4A4A4" : "#D2A249",
+        backgroundColor: config.red ? "#A4A4A4" : "red",
         opacity: blink ? "50%" : "100%",
       }}
     >{`${config.red ? "X" : ""}`}</div>

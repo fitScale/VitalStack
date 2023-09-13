@@ -429,8 +429,9 @@
 }
 
 .logical {
-  padding: 30px 24px;
+  padding: 20px 24px;
   padding-bottom: 0px;
+  border-top: 2px solid black;
 }
 
 .logical > p:first-child {
@@ -472,4 +473,58 @@
 
 .card > p {
   font-weight: 600;
+}
+
+.theBoxes {
+  padding: 30px 24px;
+  border-top: 2px solid black;
+  margin-top: 30px;
+}
+
+.theBoxes > p {
+  font-size: 16px;
+  color: red;
+  font-weight: 800;
+  font-style: italic;
+}
+
+.thecoolbox {
+  padding: 22px;
+  border: 2px solid black;
+  margin-top: 30px;
+}
+
+.theContainer {
+  margin-top: 20px;
+  background-color: rgb(235, 235, 235);
+  border: 1px solid black;
+  border-radius: 3px;
+  padding: 20px;
+}
+
+.thecoolbox > p {
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.theContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.theContainer > div:first-child {
+  display: flex;
+  gap: 10px;
+}
+
+.theContainer > div:first-child > p {
+  font-size: 18px;
+  font-weight: 800;
+}
+
+@media (min-width: 961px) {
+  .main {
+    padding: 0px 20%;
+  }
 }
