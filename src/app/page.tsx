@@ -22,6 +22,7 @@ import {
 } from "@/shopify/graphql/mutations/cart.mutations";
 import { useMutation } from "@apollo/client";
 import { useRouter } from "next/navigation";
+import va from "@vercel/analytics";
 
 import { useState } from "react";
 
@@ -195,6 +196,8 @@ const Page = () => {
   const checkout = async () => {
     // setLoading(true);
     SetMoving(false);
+    va.track("Checkout");
+
     const cart = await CartClientServices.createCart(createCart, {
       merchandiseId: "gid://shopify/ProductVariant/42062880964844",
       quantity: 1,
@@ -214,7 +217,7 @@ const Page = () => {
 
     const discount = await CartClientServices.applyDiscount(discountCode, {
       cartId: finalCart.cart.id!,
-      codes: ["fat-loss-stack-discount"],
+      codes: ["VITALSTACK"],
     });
 
     router.push(finalCart.cart.checkoutUrl!);
@@ -435,7 +438,7 @@ const Page = () => {
           <p>SO, HERES'S THE DEAL: 🤝</p>
           <h1>
             FOR A LIMITED TIME, SEIZE A MASSIVE{" "}
-            <span className="highlightCopy">30% DISCOUNT</span>
+            <span className="highlightCopy">25% DISCOUNT</span>
           </h1>
           <p>
             On our best-selling,
@@ -690,11 +693,13 @@ const Page = () => {
           </p>
           <p className={style.capacity} style={{ marginTop: "20px" }}>
             FREE SHIPPING EXIRES IN...{" "}
-            <Countdown
-              date={Date.now() + 3600000}
-              renderer={renderer}
-              precision={3}
-            />
+            {moving && (
+              <Countdown
+                date={Date.now() + 3600000}
+                renderer={renderer}
+                precision={3}
+              />
+            )}
           </p>
           <div className={style.boxContainer} style={{ margin: "15px 0px" }}>
             {" "}
