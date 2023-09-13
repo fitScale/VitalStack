@@ -35,6 +35,34 @@
   color: var(--primaryBright);
 }
 
+.science {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  padding: 12px 24px;
+  border: 2px solid black;
+  margin: 20px 24px;
+}
+
+.science > div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.science > div > p {
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.science > p {
+  font-size: 9px;
+}
+
+.science > p {
+  color: grey;
+}
+
 .cta {
   background-color: var(--primaryDark);
   padding: 20px;

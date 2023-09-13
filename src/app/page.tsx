@@ -270,6 +270,22 @@ const Page = () => {
           </h1>
         </div>
         <ImageContainer imageContainerConfig={JasonBoard} />
+        <div className={style.science}>
+          <div>
+            <Svg icon="verifiedIcon" color="black" />
+            <p>*Science Backed By University of Memphis</p>
+          </div>
+          <p>
+            <span style={{ fontWeight: "900", color: "black" }}>
+              Reference:
+            </span>{" "}
+            Bloomer, Richard J, et al. Cardiorespiratory/Metabolic Laboratory,
+            Department of Health and Sport Sciences, Memphis, TN, 2015, pp.
+            1–17, Influence of a D-Aspartic Acid/Sodium Nitrate Dietary
+            Supplement on Physiological Parameters in Middle-Aged Men: A Pilot
+            Study.
+          </p>
+        </div>
         <div style={{ margin: "0px 24px" }}>
           <div
             className={style.cta}
@@ -376,9 +392,9 @@ const Page = () => {
             </p>
             <div className={style.hook}>
               <p>
-                Read Below to Discover Two{" "}
-                <span className="highlightCopy">The 'Secret Weapons'</span> for
-                Men Are Using to Get a Massive T-Boost in Just 12 Days!
+                Play the Video Below to See{" "}
+                <span className="highlightCopy">The 'Secret Weapons'</span> For
+                Boosting T Just 12 Days!
               </p>
               <div>
                 <Svg icon="ArrowSkinnyIcon" color="black" />
@@ -717,8 +733,12 @@ const Page = () => {
           </div>
         </div>
         <div className={style.offer} style={{ borderTop: "2px solid black" }}>
-          <p>free shipping expires soon!⏳</p>
-          <h1>If you’re ready to change your life, act now!</h1>
+          <p style={{ fontSize: "15px" }}>
+            {"free shipping expires soon!⏳".toUpperCase()}
+          </p>
+          <h1 style={{ fontSize: "19px" }}>
+            {"If you’re ready to change your life, act now!".toUpperCase()}
+          </h1>
           <p></p>
           <div className={style.productImage}>
             <ImageContainer imageContainerConfig={pack} />
