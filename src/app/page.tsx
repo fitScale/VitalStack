@@ -302,6 +302,11 @@ const Page = () => {
           </div>
         </div>
         <div className={style.hook} id="test">
+          <p>
+            Read Below to Discover{" "}
+            <span className="highlightCopy">The 'Secret Weapons'</span> For
+            Boosting T Just 12 Days!
+          </p>
           <div>
             <Svg icon="ArrowSkinnyIcon" color="black" />
             <Svg icon="ArrowSkinnyIcon" color="black" />
