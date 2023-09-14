@@ -571,7 +571,7 @@ const Page = () => {
                 <div>Tablets</div>
               </div>
               <div>
-                <ImageContainer imageContainerConfig={dpol} />
+                <ImageContainer imageContainerConfig={recycle} />
                 <p style={{ fontWeight: "800", fontSize: "14px" }}>RECYCLE</p>
                 <p>THE ULTIMATE TEST OPTIMIZER</p>
                 <div>Tablets</div>
