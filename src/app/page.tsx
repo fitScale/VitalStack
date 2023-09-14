@@ -298,8 +298,8 @@ const Page = () => {
         </div>
         <div className={style.hook} id="test">
           <p>
-            Read Below to Discover Two{" "}
-            <span className="highlightCopy">The 'Secret Weapons'</span> for Men
+            Read Below to Discover The{" "}
+            <span className="highlightCopy">Two 'Secret Weapons'</span> for Men
             Are Using to Get a Massive T-Boost in Just 12 Days!
           </p>
           <div>
@@ -500,7 +500,7 @@ const Page = () => {
             STACK
           </h1>
           <p>
-            our best-selling,
+            The Vital Stack is our two best-selling,
             <span style={{ fontWeight: "700" }}>
               high-performing test-boosters—D-pol and Recycle!
             </span>{" "}
