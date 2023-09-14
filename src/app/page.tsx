@@ -234,11 +234,6 @@ const Page = () => {
       codes: ["VITALSTACK"],
     });
 
-    const shipping = await CartClientServices.applyDiscount(discountCode, {
-      cartId: finalCart.cart.id!,
-      codes: ["240WBGTR99SV"],
-    });
-
     router.push(finalCart.cart.checkoutUrl!);
   };
 
@@ -501,7 +496,7 @@ const Page = () => {
           <p>SO, HERES'S THE DEAL: 🤝</p>
           <h1>
             FOR A LIMITED TIME, SEIZE A MASSIVE{" "}
-            <span className="highlightCopy">25% DISCOUNT </span> ON THE VITAL
+            <span className="highlightCopy">30% DISCOUNT </span> ON THE VITAL
             STACK
           </h1>
           <p>
