@@ -496,7 +496,9 @@ const Page = () => {
           <p>SO, HERES'S THE DEAL: 🤝</p>
           <h1>
             FOR A LIMITED TIME, SEIZE A MASSIVE{" "}
-            <span className="highlightCopy">25% DISCOUNT</span>
+            <span className="highlightCopy">
+              25% DISCOUNT ON THE VITAL STACK
+            </span>
           </h1>
           <p>
             On our best-selling,
