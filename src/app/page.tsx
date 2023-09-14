@@ -525,7 +525,7 @@ const Page = () => {
             </span>
           </p>
           <p className={style.capacity} style={{ marginTop: "20px" }}>
-            FREE SHIPPING EXIRES IN...{" "}
+            FREE SHIPPING EXPIRES IN...{" "}
             {moving && (
               <Countdown
                 date={Date.now() + 3600000}
