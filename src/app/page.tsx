@@ -234,6 +234,11 @@ const Page = () => {
       codes: ["240WBGTR99SV", "VITALSTACK"],
     });
 
+    const shipping = await CartClientServices.applyDiscount(discountCode, {
+      cartId: finalCart.cart.id!,
+      codes: ["240WBGTR99SV", "VITALSTACK"],
+    });
+
     router.push(finalCart.cart.checkoutUrl!);
   };
 
