@@ -231,12 +231,12 @@ const Page = () => {
 
     const discount = await CartClientServices.applyDiscount(discountCode, {
       cartId: finalCart.cart.id!,
-      codes: ["240WBGTR99SV", "VITALSTACK"],
+      codes: ["VITALSTACK"],
     });
 
     const shipping = await CartClientServices.applyDiscount(discountCode, {
       cartId: finalCart.cart.id!,
-      codes: ["240WBGTR99SV", "VITALSTACK"],
+      codes: ["240WBGTR99SV"],
     });
 
     router.push(finalCart.cart.checkoutUrl!);
