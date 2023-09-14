@@ -231,7 +231,7 @@ const Page = () => {
 
     const discount = await CartClientServices.applyDiscount(discountCode, {
       cartId: finalCart.cart.id!,
-      codes: ["VITALSTACK", "EFA7JDR608KD", "test"],
+      codes: ["240WBGTR99SV", "VITALSTACK"],
     });
 
     router.push(finalCart.cart.checkoutUrl!);
