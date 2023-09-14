@@ -305,7 +305,7 @@ const Page = () => {
           <p>
             Read Below to Discover{" "}
             <span className="highlightCopy">The 'Secret Weapons'</span> For
-            Boosting T-Levels Just 12 Days!
+            Boosting T-Levels in Just 12 Days!
           </p>
           <div>
             <Svg icon="ArrowSkinnyIcon" color="black" />
@@ -413,8 +413,8 @@ const Page = () => {
             <div className={style.hook}>
               <p>
                 Play the Video Below to See{" "}
-                <span className="highlightCopy">The 'Secret Weapons'</span> For
-                Boosting T Just 12 Days!
+                <span className="highlightCopy">The 'Secret Weapon'</span> For
+                Boosting T-levels in Just 12 Days!
               </p>
               <div>
                 <Svg icon="ArrowSkinnyIcon" color="black" />
