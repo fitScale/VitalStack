@@ -334,39 +334,54 @@ const Page = () => {
           </p>
           <div>
             <p>
-              ❌ Lack of Muscle Growth
+              ❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Lack of Muscle Growth
+              </span>
               <br />
               <br />
               Struggles at the gym with no visible gains, impacting self-esteem
               and body image.
               <br />
-              <br />
-              ❌ Depressive Mood
+              <br />❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Depressive Mood
+              </span>
               <br />
               <br />
               A persistent low mood that strains relationships and affects
               overall quality of life.
               <br />
+              <br />❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Reduced Libido
+              </span>
               <br />
-              ❌ Reduced Libido
               <br />
               A significant decrease in sexual desire, creating emotional
               distance in intimate relationships.
               <br />
-              <br />
-              ❌ Limited Family Engagement
+              <br />❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Limited Family Engagement
+              </span>
               <br />
               <br />
               Lack of energy to spend quality time with your family, resulting
               in missed memories and experiences.
               <br />
-              <br />
-              ❌ Low Motivation
+              <br />❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Low Motivation
+              </span>
               <br />
               <br />A sudden loss of drive and ambition, making even small tasks
               feel insurmountable.
               <br />
-              <br />❌ Difficulty Losing Weight
+              <br />❌{" "}
+              <span style={{ fontWeight: "800", fontSize: "16px" }}>
+                Difficulty Losing Weight
+              </span>
               <br />
               <br />
               An inability to shed excess pounds despite best efforts, affecting
@@ -432,9 +447,10 @@ const Page = () => {
           <h2>
             {"since launching We have transformed the lives of thousands! ".toUpperCase()}
           </h2>
-          <p>
+          <p style={{ fontWeight: "700" }}>
             From everyday guys, to the ranks to elite athletes, Purus Labs has
-            helped men from all walks of life take back control!
+            helped men from all walks of life{" "}
+            <span className="highlightCopy">take back control!</span>
           </p>
         </div>
         <div className={style.proxyContainer}>
@@ -492,12 +508,25 @@ const Page = () => {
             <ImageContainer imageContainerConfig={pack} />
           </div>
           <p>
-            That's Not All! We're Committed to Rewarding Men Who TAKE ACTION and
-            Own Their Lives.
+            <span style={{ fontSize: "15px", fontWeight: "700" }}>
+              <br />
+              That's Not All!
+              <br />
+              <br />
+              We're Committed to Rewarding Men Who{" "}
+              <span style={{ fontWeight: "900", textDecoration: "underline" }}>
+                TAKE ACTION
+              </span>{" "}
+              and Own Their Lives.
+            </span>
             <br />
             <br />
-            So for Those Who Order in the Next Hour Only, We're Offering 100%
-            FREE SHIPPING on your purchase.
+            So for Those Who Order in the{" "}
+            <span style={{ fontWeight: "800" }}>Next Hour Only</span>, We're
+            Offering{" "}
+            <span style={{ fontWeight: "700", textDecoration: "underline" }}>
+              100% FREE SHIPPING on your purchase.
+            </span>
           </p>
           <p className={style.capacity} style={{ marginTop: "20px" }}>
             FREE SHIPPING EXIRES IN...{" "}
@@ -584,15 +613,50 @@ const Page = () => {
             For years, people thought the only way to solve the problem was to
             use artificial testosterone. <br />
             <br />
-            While that does work for some—the real magic is often overlooked.
+            While that does work for some—
+            <span
+              style={{
+                fontWeight: "800",
+                color: "red",
+                textDecoration: "underline",
+              }}
+            >
+              the real magic is often overlooked.
+            </span>
             <br />
             <br />
             While everyone's busy talking about 'boosting' testosterone, there's
-            hardly any discussion about how to make your natural system more
-            efficient. Enter D-POL & Recycle! <br />
+            hardly any discussion about{" "}
+            <span
+              style={{
+                fontWeight: "800",
+                textDecoration: "underline",
+              }}
+            >
+              how to make your natural system more efficient.
+            </span>{" "}
             <br />
-            It goes beyond simply 'boosting' your testosterone levels; they
-            supercharges your body's own hormone-making machinery.{" "}
+            <br />
+            <span
+              style={{
+                fontWeight: "900",
+                fontSize: "16px",
+              }}
+            >
+              {" "}
+              Enter D-POL & Recycle!
+            </span>{" "}
+            <br />
+            <br />
+            <span
+              style={{
+                fontWeight: "600",
+                fontStyle: "italic",
+              }}
+            >
+              They goes beyond simply 'boosting' your testosterone levels; they
+              supercharges your body's own hormone-making machinery.
+            </span>{" "}
           </p>
         </div>
         <div
