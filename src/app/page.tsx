@@ -297,11 +297,6 @@ const Page = () => {
           </div>
         </div>
         <div className={style.hook} id="test">
-          <p>
-            Read Below to Discover The{" "}
-            <span className="highlightCopy">Two 'Secret Weapons'</span> for Men
-            Are Using to Get a Massive T-Boost in Just 12 Days!
-          </p>
           <div>
             <Svg icon="ArrowSkinnyIcon" color="black" />
             <Svg icon="ArrowSkinnyIcon" color="black" />
