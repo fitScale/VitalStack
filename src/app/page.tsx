@@ -305,7 +305,7 @@ const Page = () => {
           <p>
             Read Below to Discover{" "}
             <span className="highlightCopy">The 'Secret Weapons'</span> For
-            Boosting T Just 12 Days!
+            Boosting T-Levels Just 12 Days!
           </p>
           <div>
             <Svg icon="ArrowSkinnyIcon" color="black" />
