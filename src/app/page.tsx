@@ -433,7 +433,7 @@ const Page = () => {
             <div
               className={style.cta}
               onClick={() => {
-                scrollToElement("offer");
+                checkout();
               }}
             >
               YES, TRANSFORM MY FITNESS NOW!
@@ -469,7 +469,7 @@ const Page = () => {
                   className={style.cta}
                   style={{ border: "1px solid white" }}
                   onClick={() => {
-                    scrollToElement("offer");
+                    checkout();
                   }}
                 >
                   <p
@@ -579,6 +579,21 @@ const Page = () => {
               </div>
             </div>
           </div>
+          <div className={style.hook}>
+            <p>
+              Click the button below to
+              <span className="highlightCopy">
+                take control of your life
+              </span>{" "}
+              For with these game-changing products, that have already helped
+              thousands!
+            </p>
+            <div>
+              <Svg icon="ArrowSkinnyIcon" color="black" />
+              <Svg icon="ArrowSkinnyIcon" color="black" />
+              <Svg icon="ArrowSkinnyIcon" color="black" />
+            </div>
+          </div>
           <div
             className={style.cta}
             style={{ marginTop: "25px", marginBottom: "5px" }}
@@ -588,6 +603,12 @@ const Page = () => {
           >
             YES, TRANSFORM MY FITNESS NOW!
           </div>
+          <p
+            style={{ fontSize: "12px", fontWeight: "800", fontStyle: "italic" }}
+          >
+            Think about it, that's just $2 a day. Less than your daily coffee,
+            but for life-changing results.
+          </p>
         </div>
         <div
           style={{
