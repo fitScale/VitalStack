@@ -496,12 +496,11 @@ const Page = () => {
           <p>SO, HERES'S THE DEAL: 🤝</p>
           <h1>
             FOR A LIMITED TIME, SEIZE A MASSIVE{" "}
-            <span className="highlightCopy">
-              25% DISCOUNT ON THE VITAL STACK
-            </span>
+            <span className="highlightCopy">25% DISCOUNT </span> ON THE VITAL
+            STACK
           </h1>
           <p>
-            On our best-selling,
+            our best-selling,
             <span style={{ fontWeight: "700" }}>
               high-performing test-boosters—D-pol and Recycle!
             </span>{" "}
