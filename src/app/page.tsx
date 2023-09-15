@@ -583,9 +583,10 @@ const Page = () => {
             <p>
               Click the button below to
               <span className="highlightCopy">
+                {" "}
                 take control of your life
               </span>{" "}
-              For with these game-changing products, that have already helped
+              with these game-changing products, that have already helped
               thousands!
             </p>
             <div>
@@ -608,6 +609,50 @@ const Page = () => {
           >
             Think about it, that's just $2 a day. Less than your daily coffee,
             but for life-changing results.
+          </p>
+        </div>
+        <div className={style.guarantee}>
+          <div>
+            <Svg color="black" icon="verifiedIcon" />
+            <p>THE PURUS GUARANTEE</p>
+          </div>
+          <p>
+            <span style={{ fontWeight: "600" }}>
+              We've Transformed the Lives of Thousands of Men and{" "}
+              <span style={{ fontWeight: "700", textDecoration: "underline" }}>
+                We're Betting You'll Be Next!
+              </span>
+            </span>
+            <br />
+            <br />
+            So Confident in Fact That We're Putting Our Money Where Our Mouth
+            Is.
+            <br />
+            <br />
+            <span
+              style={{
+                fontWeight: "700",
+                textDecoration: "underline",
+                fontStyle: "italic",
+              }}
+            >
+              {" "}
+              If You're Anything But Absolutely Thrilled with Your Purchase,
+              Just Send It Back Within 30 Days of Receiving.
+            </span>
+            <br />
+            <br />
+            And we'll Speedily{" "}
+            <span
+              style={{
+                fontWeight: "700",
+                textDecoration: "underline",
+                color: "red",
+              }}
+            >
+              Refund Every Single Penny, Directly to Your Bank Account
+            </span>
+            —No Questions Asked.
           </p>
         </div>
         <div

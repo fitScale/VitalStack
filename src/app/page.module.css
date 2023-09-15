@@ -601,3 +601,22 @@
     padding: 0px 20%;
   }
 }
+
+.guarantee {
+  padding: 22px;
+  border: 2px dashed black;
+  margin: 0px 24px;
+  margin-bottom: 20px;
+}
+
+.guarantee > div {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.guarantee > div > p {
+  font-size: 18px;
+  font-weight: 800;
+  text-decoration: underline;
+}
