@@ -213,7 +213,7 @@ const Page = () => {
     va.track("Checkout");
 
     const cart = await CartClientServices.createCart(createCart, {
-      merchandiseId: "gid://shopify/ProductVariant/42062880964844",
+      merchandiseId: "gid://shopify/ProductVariant/43957254160620",
       quantity: 1,
     });
 
