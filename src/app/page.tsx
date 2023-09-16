@@ -210,31 +210,15 @@ const Page = () => {
   const checkout = async () => {
     setLoading(true);
     SetMoving(false);
-    va.track("Checkout");
 
     const cart = await CartClientServices.createCart(createCart, {
-      merchandiseId: "gid://shopify/ProductVariant/43957254160620",
+      merchandiseId: "gid://shopify/ProductVariant/43957254127852",
       quantity: 1,
     });
 
     console.log(cart);
 
-    const finalCart = await CartClientServices.addCartItem(
-      addCart,
-      createCart,
-      {
-        cartId: cart.cart.id,
-        merchandiseId: "gid://shopify/ProductVariant/57765711627",
-        quantity: 1,
-      }
-    );
-
-    const discount = await CartClientServices.applyDiscount(discountCode, {
-      cartId: finalCart.cart.id!,
-      codes: ["VITALSTACK"],
-    });
-
-    router.push(finalCart.cart.checkoutUrl!);
+    router.push(cart.cart.checkoutUrl!);
   };
 
   const scrollToElement = (elementId: any) => {
@@ -256,9 +240,9 @@ const Page = () => {
           </div>
         )}
         <div className={style.hero}>
-          <p>DISCOVER EXACTLY HOW...</p>
+          <p style={{ marginTop: "10px" }}>Using The "Vital Stack"...</p>
           <h1>
-            MEN JUST LIKE YOU ARE NATURALLY BOOSTING THEIR T-LEVELS{" "}
+            MEN JUST LIKE YOU ARE NATURALLY BOOST THEIR T-LEVELS{" "}
             <span
               style={{
                 color: "var(--primaryBright)",
@@ -286,28 +270,34 @@ const Page = () => {
             Study.
           </p>
         </div>
-        <div style={{ margin: "0px 24px" }}>
+        <div
+          style={{
+            margin: "0px 24px",
+            textAlign: "center",
+            lineHeight: "140%",
+          }}
+        >
           <div
             className={style.cta}
             onClick={() => {
+              va.track("Info");
               scrollToElement("test");
             }}
+            style={{ fontWeight: "700", fontSize: "12px" }}
           >
-            CLICK TO HERE LEARN “THE SECRET”{" "}
+            <p style={{ color: "white", fontWeight: "700" }}>
+              <span style={{ textDecoration: "underline", fontWeight: "800" }}>
+                CLICK HERE
+              </span>{" "}
+              TO LEARN{" "}
+              <span style={{ fontStyle: "italic", fontWeight: "800" }}>
+                'THE MAGIC'
+              </span>{" "}
+              BEHIND THE VITAL STACK
+            </p>
           </div>
         </div>
-        <div className={style.hook} id="test">
-          <p>
-            Read Below to Discover{" "}
-            <span className="highlightCopy">The 'Secret Weapons'</span> For
-            Boosting T-Levels in Just 12 Days!
-          </p>
-          <div>
-            <Svg icon="ArrowSkinnyIcon" color="black" />
-            <Svg icon="ArrowSkinnyIcon" color="black" />
-            <Svg icon="ArrowSkinnyIcon" color="black" />
-          </div>
-        </div>
+        <div className={style.hook} id="test"></div>
         <div className={style.imageTextBox}>
           <h2>REMEMBER WHEN YOU WERE UNSTOPPABLE?</h2>
           <p>
@@ -321,8 +311,8 @@ const Page = () => {
           <ImageContainer imageContainerConfig={banbner} />
         </div>
         <div className={style.infoBlock}>
-          <h2>LIKE A CRUEL PLOT TWIST, AGE SNUCK UP ON YOU.</h2>
-          <p>
+          <h2>BUT LIKE A CRUEL PLOT TWIST, AGE SNUCK UP ON YOU.</h2>
+          <p style={{ fontWeight: "600" }}>
             The weights started feeling like boulders.
             <br />
             <br />
@@ -334,6 +324,22 @@ const Page = () => {
           </p>
           <div>
             <p>
+              {" "}
+              <span style={{ fontWeight: "800", fontSize: "18px" }}>
+                These signs of low testosterone might ring a bell.{" "}
+              </span>
+            </p>
+            <div className={style.hook} style={{ marginTop: "15px" }}>
+              <div>
+                <Svg icon="ArrowSkinnyIcon" color="white" />
+                <Svg icon="ArrowSkinnyIcon" color="white" />
+                <Svg icon="ArrowSkinnyIcon" color="white" />
+              </div>
+            </div>
+            <p style={{ marginTop: "5px" }}>
+              <span>
+                <br />
+              </span>
               ❌{" "}
               <span style={{ fontWeight: "800", fontSize: "16px" }}>
                 Lack of Muscle Growth
@@ -405,11 +411,11 @@ const Page = () => {
                 better sleep, better gym sessions, and a rekindled libido!
               </span>
             </p>
-            <div className={style.hook}>
+            <div className={style.hook} style={{ marginTop: "20px" }}>
               <p>
-                Play the Video Below to See{" "}
+                Play the Video Below to Discover{" "}
                 <span className="highlightCopy">The 'Secret Weapon'</span> For
-                Boosting T-levels in Just 12 Days!
+                Naturally Boosting T-levels.
               </p>
               <div>
                 <Svg icon="ArrowSkinnyIcon" color="black" />
@@ -433,10 +439,11 @@ const Page = () => {
             <div
               className={style.cta}
               onClick={() => {
+                va.track("Checkout - 1");
                 checkout();
               }}
             >
-              YES, TRANSFORM MY FITNESS NOW!
+              YES, BOOST MY TEST TODAY!
             </div>
           </div>
         </div>
@@ -452,6 +459,10 @@ const Page = () => {
             helped men from all walks of life{" "}
             <span className="highlightCopy">take back control!</span>
           </p>
+        </div>
+        <div className={style.trust}>
+          <Svg color="black" icon="verifiedIcon" />{" "}
+          <p>TRUSTED BY 10,000+ WORLDWIDE</p>
         </div>
         <div className={style.proxyContainer}>
           <div className={style.container}>
@@ -469,6 +480,7 @@ const Page = () => {
                   className={style.cta}
                   style={{ border: "1px solid white" }}
                   onClick={() => {
+                    va.track("Checkout - 2");
                     checkout();
                   }}
                 >
@@ -479,7 +491,7 @@ const Page = () => {
                       fontWeight: "800",
                     }}
                   >
-                    YES, TRANSFORM MY FITNESS NOW!
+                    YES, BOOST MY TEST TODAY!
                   </p>
                 </div>
               </div>
@@ -511,7 +523,9 @@ const Page = () => {
           <p>
             <span style={{ fontSize: "15px", fontWeight: "700" }}>
               <br />
-              That's Not All!
+              <span style={{ fontSize: "18px", fontWeight: "800" }}>
+                That's Not All!
+              </span>
               <br />
               <br />
               We're Committed to Rewarding Men Who{" "}
@@ -539,7 +553,7 @@ const Page = () => {
               />
             )}
           </p>
-          <div className={style.boxContainer} style={{ margin: "15px 0px" }}>
+          <div className={style.boxContainer}>
             {" "}
             {moving && generateBoxes(16)}
           </div>
@@ -579,7 +593,7 @@ const Page = () => {
               </div>
             </div>
           </div>
-          <div className={style.hook}>
+          <div className={style.hook} style={{ marginTop: "20px" }}>
             <p>
               Click the button below to
               <span className="highlightCopy">
@@ -599,13 +613,19 @@ const Page = () => {
             className={style.cta}
             style={{ marginTop: "25px", marginBottom: "5px" }}
             onClick={() => {
+              va.track("Checkout - 3");
               checkout();
             }}
           >
-            YES, TRANSFORM MY FITNESS NOW!
+            YES, BOOST MY TEST TODAY!
           </div>
           <p
-            style={{ fontSize: "12px", fontWeight: "800", fontStyle: "italic" }}
+            style={{
+              marginTop: "10px",
+              fontSize: "12px",
+              fontWeight: "800",
+              fontStyle: "italic",
+            }}
           >
             Think about it, that's just $2 a day. Less than your daily coffee,
             but for life-changing results.
@@ -734,10 +754,11 @@ const Page = () => {
             marginBottom: "5px",
           }}
           onClick={() => {
+            va.track("Checkout - 4");
             checkout();
           }}
         >
-          YES, TRANSFORM MY FITNESS NOW!
+          YES, BOOST MY TEST TODAY!
         </div>
         <div className={style.theBoxes}>
           <p>{"still skeptical?".toUpperCase()}</p>
@@ -809,10 +830,11 @@ const Page = () => {
               margin: "20px 0px",
             }}
             onClick={() => {
+              va.track("Checkout - 5");
               checkout();
             }}
           >
-            YES, TRANSFORM MY FITNESS NOW!
+            YES, BOOST MY TEST TODAY!
           </div>
           <div className={style.thecoolbox}>
             <p>D-POL: The ULTIMATE TEST BOOSTER...</p>
@@ -857,10 +879,11 @@ const Page = () => {
               margin: "20px 0px",
             }}
             onClick={() => {
+              va.track("Checkout - 6");
               checkout();
             }}
           >
-            YES, TRANSFORM MY FITNESS NOW!
+            YES, BOOST MY TEST TODAY!
           </div>
         </div>
         <div className={style.offer} style={{ borderTop: "2px solid black" }}>
@@ -875,12 +898,23 @@ const Page = () => {
             <ImageContainer imageContainerConfig={pack} />
           </div>
           <p>
-            We're Committed to Rewarding Men Who TAKE ACTION and Own Their
-            Lives.
+            <span style={{ fontSize: "15px", fontWeight: "700" }}>
+              <br />
+              <br />
+              We're Committed to Rewarding Men Who{" "}
+              <span style={{ fontWeight: "900", textDecoration: "underline" }}>
+                TAKE ACTION
+              </span>{" "}
+              and Own Their Lives.
+            </span>
             <br />
             <br />
-            So for Those Who Order in the Next Hour Only, We're Offering 100%
-            FREE SHIPPING on your purchase.
+            So for Those Who Order in the{" "}
+            <span style={{ fontWeight: "800" }}>Next Hour Only</span>, We're
+            Offering{" "}
+            <span style={{ fontWeight: "700", textDecoration: "underline" }}>
+              100% FREE SHIPPING on your purchase.
+            </span>
           </p>
           <p className={style.capacity} style={{ marginTop: "20px" }}>
             FREE SHIPPING EXIRES IN...{" "}
@@ -892,41 +926,56 @@ const Page = () => {
               />
             )}
           </p>
-          <div className={style.boxContainer} style={{ margin: "15px 0px" }}>
+          <div className={style.boxContainer}>
             {" "}
             {moving && generateBoxes(16)}
           </div>
 
           <div className={style.box}>
             <h2>Here’s what your getting:</h2>
-            <p>✅ Core EVOLV Program ~ Value: $29.99 / mo.</p>
-            <p className={style.bonus}>BOUNUS #1:</p>
-
-            <p>✅ Private Community Access~ Value: $97.00</p>
-            <p className={style.bonus}>BOUNUS #2:</p>
-            <p className={style.total}>
-              ✅ Direct 1-1 coaching ~ Value: $297.00
+            <p>RECYCLE ( 30 SERV. ) ~ Value: $39.99</p>
+            <p>D-POL ( 30 SERV. ) ~ Value: $39.99</p>
+            <p className={style.bonus} style={{ color: "red" }}>
+              LIMITED TIME BOUNUS:
             </p>
+
+            <p>✅ FREE SHIPPING ~ Value: $8.78</p>
+
             <p style={{ marginTop: "10px", fontSize: "14px" }}>
-              Total Package Value: $423.99
+              Total Package Value: $88.72
             </p>
             <hr />
             <p
               className={style.final}
               style={{ fontSize: "16px", marginTop: "10px" }}
             >
-              TODAY’S SPECIAL PRICE: $0.00
+              TODAY’S SPECIAL PRICE: $59.99
             </p>
-            <div className={style.save}>LIMITED TIME SAVE $423.99!</div>
+            <div className={style.save}>LIMITED TIME SAVE $28.72!</div>
+            <div className={style.grid}>
+              <div>
+                <ImageContainer imageContainerConfig={dpol} />
+                <p>D-POL</p>
+                <p>THE ULTIMATE TEST BOOSTER</p>
+                <div>Tablets</div>
+              </div>
+              <div>
+                <ImageContainer imageContainerConfig={recycle} />
+                <p style={{ fontWeight: "800", fontSize: "14px" }}>RECYCLE</p>
+                <p>THE ULTIMATE TEST OPTIMIZER</p>
+                <div>Tablets</div>
+              </div>
+            </div>
           </div>
           <div
             className={style.cta}
             style={{ marginTop: "25px", marginBottom: "5px" }}
             onClick={() => {
+              va.track("Checkout - 7");
               checkout();
             }}
           >
-            YES, TRANSFORM MY FITNESS NOW!
+            YES, BOOST MY TEST TODAY!
           </div>
         </div>
       </main>

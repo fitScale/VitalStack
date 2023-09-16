@@ -68,13 +68,13 @@
   padding: 20px;
   display: grid;
   place-items: center;
-  font-weight: 800;
+  font-weight: 900;
   font-size: 15px;
   border: 2px solid black;
 }
 
 .cta {
-  font-weight: 700;
+  font-weight: 900;
 
   border: 2px solid black;
 }
@@ -101,7 +101,6 @@
 }
 
 .hook {
-  margin-top: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -598,7 +597,7 @@
 
 @media (min-width: 961px) {
   .main {
-    padding: 0px 20%;
+    padding: 0px 25%;
   }
 }
 
@@ -619,4 +618,31 @@
   font-size: 18px;
   font-weight: 800;
   text-decoration: underline;
+}
+@media (min-width: 961px) {
+  .proxyContainer {
+    width: 50%;
+    margin: 20px auto;
+  }
+  .boxContainer {
+    width: 45%;
+    margin: 10px auto;
+  }
+}
+
+.trust {
+  margin: 0px 24px;
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  align-items: center;
+  border: 1px solid black;
+  padding: 15px;
+  margin-top: 22px;
+  font-weight: 900;
+  border-radius: var(--borderRadius);
+}
+
+.trust > p {
+  font-weight: 700;
 }

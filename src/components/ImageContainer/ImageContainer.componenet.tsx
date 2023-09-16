@@ -10,6 +10,7 @@ export interface ImageContainerProps {
   className?: string;
   style?: React.CSSProperties;
   view?: boolean;
+  opt?: string;
 }
 
 const ImageContainer = ({
@@ -23,6 +24,7 @@ const ImageContainer = ({
       style={{
         aspectRatio: imageContainerConfig.aspectRatio,
         height: imageContainerConfig.height,
+        width: imageContainerConfig.opt ? imageContainerConfig.opt : "",
       }}
     >
       <Image
