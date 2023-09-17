@@ -7,6 +7,8 @@ import ImageContainer, {
 } from "../ImageContainer/ImageContainer.componenet";
 import style from "./Footer.module.css";
 import Link from "next/link";
+import { useQuery } from "@apollo/client";
+import { getProductSingleQuery } from "@/shopify/graphql/queries/product.queries";
 
 const Footer = () => {
   const imageContainerConfig: ImageContainerProps = {
@@ -15,6 +17,10 @@ const Footer = () => {
     aspectRatio: "352/157",
     height: "25px",
   };
+
+  const { data } = useQuery(getProductSingleQuery, {
+    variables: { productId: "" },
+  });
 
   return (
     <footer className={style.footer}>
